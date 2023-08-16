@@ -14,7 +14,71 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h2>single product</h2>
+    <!-- navbar -->
+    <nav class="navbar page">
+      <div class="nav-center">
+        <!-- links -->
+        <button class="toggle-nav">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" class="nav-link"> home </a>
+          </li>
+          <li>
+            <a href="products.html" class="nav-link"> products </a>
+          </li>
+          <li>
+            <a href="about.html" class="nav-link"> about </a>
+          </li>
+        </ul>
+        <!-- logo -->
+        <img src="./images//logo-black.svg" class="nav-logo" alt="logo" />
+        <!-- cart icon -->
+        <div class="toggle-container">
+          <button class="toggle-cart">
+            <i class="fas fa-shopping-cart"></i>
+          </button>
+          <span class="cart-item-count">1</span>
+        </div>
+      </div>
+    </nav>
+    <!-- hero -->
+    <section class="page-hero">
+      <div class="section-center">
+        <h3 class="page-hero-title">Home / About</h3>
+      </div>
+    </section>
+    <!-- sidebar -->
+    <div class="sidebar-overlay">
+      <aside class="sidebar">
+        <!-- close -->
+        <button class="sidebar-close">
+          <i class="fas fa-times"></i>
+        </button>
+        <!-- links -->
+        <ul class="sidebar-links">
+          <li>
+            <a href="index.html" class="sidebar-link">
+              <i class="fas fa-home fa-fw"></i>
+              home
+            </a>
+          </li>
+          <li>
+            <a href="products.html" class="sidebar-link">
+              <i class="fas fa-couch fa-fw"></i>
+              products
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="sidebar-link">
+              <i class="fas fa-book fa-fw"></i>
+              about
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </div>
     <script type="module" src="./src/pages/product.js"></script>
   </body>
 </html>

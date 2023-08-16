@@ -1,4 +1,4 @@
-import { formatPrice, getElement } from '../utils.js';
+import { formatPrice, getElement } from "../utils.js";
 
 const addToCartDOM = () => {};
 
