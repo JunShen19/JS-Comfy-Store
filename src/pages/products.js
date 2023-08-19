@@ -9,16 +9,31 @@ import setupCompanies from "../filters/companies.js";
 import setupPrice from "../filters/price.js";
 
 // specific imports
-import { store } from "../store.js";
+import { setupStore, store } from "../store.js";
 import display from "../displayProducts.js";
 import { getElement } from "../utils.js";
 
-const loading = getElement(".page-loading");
+// deal with the store problem
+import fetchProducts from "../fetchProducts.js";
 
-display(store, getElement(".products-container"));
-setupSearch(store);
-setupCompanies(store);
+const init = async () => {
+  const loading = getElement(".page-loading");
 
-setupPrice(store);
+  if (store.length < 1) {
+    const products = await fetchProducts();
+    if (products) {
+      console.log("fetch from products.js");
+      setupStore(products);
+    }
+  }
 
-loading.style.display = "none";
+  display(store, getElement(".products-container"));
+  setupSearch(store);
+  setupCompanies(store);
+
+  setupPrice(store);
+
+  loading.style.display = "none";
+};
+
+init();
